@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 /**
  * open_file - Open up a file for reading
@@ -74,7 +75,7 @@ int main(int ac, char **av)
     char *filename, *eptr;
     FILE *fd;
     char *line;
-    unsigned long long number, i, j, k, l, mid, third;
+    unsigned long long number, i, j, k, l, mid, third, num;
 
     if (ac != 2)
         exit(EXIT_FAILURE);
@@ -96,8 +97,11 @@ int main(int ac, char **av)
 		}
 
 
-		mid = number / 2;
-		third = 3 * number / 4;
+        num = sqrt(number);
+
+
+		mid = num / 2;
+		third = 3 * num / 4;
 
 		mid = (mid % 2 == 1) ? mid : mid + 1;
 		third = (third % 2 == 1) ? third : third + 1;
@@ -105,7 +109,7 @@ int main(int ac, char **av)
         i = 3;
 		j = mid;
 		k = mid + 2;
-		l = number - 2;
+		l = num - 2;
 
 
         while ((i <= (mid/2) + 1 && j > (mid/2) + 1) || (k <= third && l > third))
