@@ -97,11 +97,11 @@ int main(int ac, char **av)
 		}
 
 
-        num = sqrt(number);
+        // num = sqrt(number);
 
 
-		mid = num / 2;
-		third = 3 * num / 4;
+		mid = number / 2;
+		third = 3 * number / 4;
 
 		mid = (mid % 2 == 1) ? mid : mid + 1;
 		third = (third % 2 == 1) ? third : third + 1;
@@ -109,7 +109,7 @@ int main(int ac, char **av)
         i = 3;
 		j = mid;
 		k = mid + 2;
-		l = num - 2;
+		l = number - 2;
 
 
         while ((i <= (mid/2) + 1 && j > (mid/2) + 1) || (k <= third && l > third))
